@@ -2,46 +2,69 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-
 const Wrapper = styled.div`
-  width:100%;
-  max-widthL720px;
+position: relative;
+width: 1440px;
+height: 1024px;
+margin: 0 auto;
+
+background: #FFFFFF;
+
 `;
 
 const StyledButtonL = styled.button`
-  padding:8px 16px;
-  font-size:16px;
-  border-width:1px;
-  border-radius:8px;
-  cursor:pointer;
-
-  background: #C5DBFC;
-  border-radius: 30px;
+position: absolute;
+left: 20.76%;
+right: 23.4%;
+top: 56.45%;
+bottom: 30.76%;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 90.7199px;
+line-height: 127px;
+background: #C5DBFC;
+border-radius: 50px;
 
 `;
 
 const StyledButtonS = styled.button`
-  padding:8px 16px;
-  font-size:16px;
-  border-width:1px;
-  border-radius:8px;
-  cursor:pointer;
+position: absolute;
+left: 20.76%;
+right: 23.4%;
+top: 79.49%;
+bottom: 7.71%;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 90.7199px;
+line-height: 127px;
 
-  background-color:#FBCCCC;
-  border-radius: 30px;
+
+background: #FBCCCC;
+border-radius: 50px;
 
 `;
 
+const Styledlogo = styled.img`
+position: absolute;
+width: 864px;
+height: 484px;
+left: 270px;
+top: 51px;
+
+`;
+
+
 function Home() {
   const navigate = useNavigate();
-  const logo = "/img/logo.png"
+  const logo = "/img/logo.png";
 
   return (
     <Wrapper>
-      <img src={logo} alt=''/>
+     <Styledlogo img src={logo} alt=" "/>
       <StyledButtonL title="로그인" onClick={()=>{navigate("login");}}>Login</StyledButtonL>
       <StyledButtonS title="회원가입" onClick={()=>{navigate("signup");}}>Signup</StyledButtonS>
-
     </Wrapper>
   )
 }
