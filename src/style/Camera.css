@@ -1,0 +1,41 @@
+.Wrapper {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    margin: 0 auto;
+}
+
+.webcamstyle {
+    position: absolute;
+    width: 980px;
+    height: 1200px;
+    left: 266px;
+    top: 69px;
+
+    background: #FFFCFC;
+    border: 3px solid #000000;
+}
+
+.capturestyle {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    left: 614px;
+    top: 700px;
+}
+
+.redostyle {
+    position: absolute;
+    width: 141px;
+    height: 105px;
+    left: 291px;
+    top: 807px;
+}
+
+.submitstyle {
+    position: absolute;
+    width: 141px;
+    height: 105px;
+    left: 925px;
+    top: 807px;
+}
