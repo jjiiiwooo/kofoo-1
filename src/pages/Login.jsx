@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React, {useState, useEffect } from 'react';
+import React, {useState} from 'react';
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -147,14 +148,17 @@ const PsError = styled.div`
 
   function Login() {
   const logo = "/img/logo.png"
+  const navigate = useNavigate();
+
 
   const [email, setEmail] = useState(' ');
   const [password, setPassword] = useState(' ');
 
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid,setPwValid] = useState(false);
-  const [notAllow, setNotAllow] = useState(true);
+  //const [notAllow, setNotAllow] = useState(true);
 
+  //이메일
   const handleEmail = (e) => {
     setEmail(e.target.value);
 
@@ -195,14 +199,15 @@ const PsError = styled.div`
     })
   };
   
-  useEffect (() => {
+  /*useEffect (() => {
     if(emailValid && pwValid) {
       setNotAllow(false);
       return;
     }
     setNotAllow(true);
-  },[emailValid,pwValid]);
+  },[emailValid,pwValid]); */
 
+  //비밀번호
   const handlePassword = (e) => {
     setPassword(e.target.value);
 
@@ -215,6 +220,13 @@ const PsError = styled.div`
       setPwValid(false);
     }
   }
+
+  //제출 버튼 클릭시 메인 페이지로 이동
+  const gotoMain = () => {
+    navigate("main");
+  };
+  
+
   return (
     <Wrapper>
       <div >
@@ -256,7 +268,7 @@ const PsError = styled.div`
       </div>
 
       <div>
-        <Styledsubmitbutton onClick={handleConfirmButton} disabled={notAllow} >
+        <Styledsubmitbutton onClick={gotoMain} >
           SUBMIT
         </Styledsubmitbutton>
       </div>

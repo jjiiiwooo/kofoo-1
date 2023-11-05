@@ -9,6 +9,7 @@ height: 1024px;
 margin: 0 auto;
 
 background: #FFFFFF;
+border: 1px solid #000000;
 
 `;
 

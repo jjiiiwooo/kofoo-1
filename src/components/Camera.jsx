@@ -8,7 +8,7 @@ import { FcOk } from "react-icons/fc";
 
 
 const videoConstraints = {
-    facingMode: "user"
+    facingMode: 'user'
 };
 
 const Camera = () => {
@@ -25,12 +25,12 @@ const Camera = () => {
 
 
     //axios를 사용하여 이미지파일 서버 전송
-    const onUpload = () => {
+    async function onUpload () {
         const img = new FormData();
         img.append("image",imgSrc);
-        axios( {
+        await axios( {
             method:'post',
-            url:"http://localhost:8000/Capture",
+            //url:"http://localhost:8000/Capture",
             data: "image",
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -45,14 +45,14 @@ const Camera = () => {
     };
 
     return (
-        <div className="Wrapper">
-            {/*imgSrc state 변수가 null이 아니라면 webcam이 보임*/}
+        <div className="Wrapper1">
+            
             {imgSrc ? (
                 <img src={imgSrc} alt="webcam" />
             ):(
                 <Webcam className="webcamstyle"
                     audio={false}
-                    height={600}
+                    height={1280}
                     width={600}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
@@ -63,16 +63,16 @@ const Camera = () => {
 
             )}
             <div>
-                {imgSrc ? (
-                    <FcRedo className="redostyle" onClick={onRetake}>재촬영</FcRedo>
-                ) : (
-                    <FcCamera className="capturestyle"onClick={onCapture} onChange={onUpload}>촬영</FcCamera>
-                )}
+              {imgSrc ? (
+                <FcRedo className="redostyle" onClick={onRetake}>재촬영</FcRedo>
+              ) : (
+                <FcCamera className="capturestyle"onClick={onCapture} onChange={onUpload}>촬영</FcCamera>
+              )}
                 {submit && (
-                    <FcOk className="submitstyle" onClick={onUpload}>제출</FcOk>
-                )}
+                 <FcOk className="submitstyle" onClick={onUpload}>제출</FcOk>
+              )}
+                </div>
             </div>
-        </div>
     );
 };
 
