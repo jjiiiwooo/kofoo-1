@@ -1,4 +1,5 @@
 import useCurrentLocation from "../hooks/useCurrentLocation";
+import { NaverMap } from "react-naver-maps";
 import { geolocationOptions } from "./geolocationOptions";
 
 const  { naver } = window;

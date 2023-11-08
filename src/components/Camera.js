@@ -7,6 +7,7 @@ import { FcRedo } from "react-icons/fc";
 import { FcOk } from "react-icons/fc";
 
 
+
 const videoConstraints = {
     facingMode: 'user'
 };
@@ -43,6 +44,7 @@ const Camera = () => {
         setImgSrc(null);
         setSubmit(false);
     };
+
 
     return (
         <div className="Wrapper1">
