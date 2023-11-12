@@ -195,6 +195,10 @@ const Main = () => {
         navigate("picture");
     }
 
+    const gotoMap = () => {
+        navigate("map");
+    }
+
 
     return (
         <Wrapper>
@@ -228,7 +232,7 @@ const Main = () => {
             </Dessert>
             
             <Outside>
-                <img src={outside}  alt=' ' />
+                <img src={outside} onClick={gotoMap} alt=' ' />
             </Outside>
             <Inside>
                 <img src={inside} onClick={gotoPicture} alt=' '/>
