@@ -1,12 +1,12 @@
 import {Map, MapMarker} from 'react-kakao-maps-sdk';
 import {useState, useEffect} from 'react';
 import { FcSearch } from "react-icons/fc";
+import FilterModal from './filterModal';
 import '../style/SearchMap.css';
 
 
 const {kakao} = window;
 
-//키워드 입력 후 검색 클릭 시 원하는 키워드의 주소로 이동
 const SearchMap = () => {
   const [info, setInfo] = useState()
   const [markers, setMarkers] = useState([])
@@ -20,11 +20,12 @@ const SearchMap = () => {
     errMsg: null,
     isLoading: true,
   })
+  const [modalOpen, setModalOpen] = useState(false);
 
  //사용자 현재 위치 받아오기
  useEffect(() => {
     if (navigator.geolocation) {
-      // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+      // GeoLocation을 이용
       navigator.geolocation.getCurrentPosition(
         (position) => {
           setState((prev) => ({
@@ -56,6 +57,7 @@ const SearchMap = () => {
 
   //제출한 검색어 state에 담아줌
   const onChangeSearch = (e) => {
+    e.preventDefault();
     setKeyword(e.target.value);
   };
 
@@ -68,7 +70,7 @@ const handleSerarch = () => {
                 setKeyword(data);
 
          // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-        // LatLngBounds 객체에 좌표를 추가합니다
+        // LatLngBounds 객체에 좌표를 추가
         const bounds = new kakao.maps.LatLngBounds()
         let markers = []
 
@@ -78,7 +80,7 @@ const handleSerarch = () => {
               lat: data[i].y,
               lng: data[i].x,
             },
-            content: data[i].place_name,
+            content: data[i].place_name + data[i].address_name + data[i].phone
           })
          
           bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x))
@@ -93,18 +95,28 @@ const handleSerarch = () => {
     }
 };
 
+//필터 모달창 오픈 
+const showFilter = () => {
+    setModalOpen(true);
+};
+
+  
   return (
     <>
+    <div>
+        <button onClick={showFilter}>filter</button>
+        {modalOpen && <FilterModal setModalOpen={setModalOpen} />}
+    </div>
+    
         <div>
             <input className="InputStyle"
                 type="text"
                 value={keyword}
                 id="keyword"
-                placeholder="주소나 키워드를 검색해주세요"
+                placeholder="00 맛집을 입력해주세요"
                 onChange={onChangeSearch}
             />
         </div>
-
         <div>
             <FcSearch size="50" className="SearchButton"onClick={handleSerarch}>검색</FcSearch>
         </div>

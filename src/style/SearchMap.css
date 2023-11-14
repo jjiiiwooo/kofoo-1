@@ -1,7 +1,7 @@
 .InputStyle  {
     position: absolute;
     top: 70px;
-    left: 400px;
+    left: 200px;
     width: 800px;
     height: 40px;
     margin: 10px 0 30px 10px;
@@ -15,8 +15,7 @@
 
 .SearchButton {
     position:absolute;
-    height: 200px;
-    left:1160px;
+    height: 198px;
+    left:980px;
     z-index: 2;
 }
-

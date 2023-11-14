@@ -1,9 +1,9 @@
-import MapContainer from "../components/MapContainer";
+import SearchMap from "../components/SearchMap";
 
 const MapSearching = () => {
     return (
         <>
-        <MapContainer />
+        <SearchMap />
         </>
 
     )
