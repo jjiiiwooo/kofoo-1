@@ -1,14 +1,63 @@
-import React from 'react';
+import styled from "styled-components";
 
-const MenuItem = (props) => {
-    
+const Box = styled.div`
+    display: flex;
+    width: 1175px;
+    height: 170px;
+    left: 99px;
+    top: 484px;
+    margin:0 auto;
+
+    background: #F4F2F2;
+    border-radius: 30px;
+
+    .thumbnail {
+        margin-right: 1rem;
+        img {
+            margin-top:1rem;
+            margin-left:1rem;
+            border-radius: 30px;
+            display:block;
+            width: 299px;
+            height:132px;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        p {
+            margin:0;
+            margin-top:3rem;
+            margin-left:3rem;
+            white-space: normal;
+            font-family: 'IBM Plex Mono';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 1.5rem;
+        }
+    }
+
+    &+& {
+        margin-top: 3rem;
+    }
+`;
+
+
+const MenuItem = ({food}) => {
+    const {Id, FoodImage, FoodName, caption} = food;
+
     return (
-        <div>
-            <div key={props.food.Id}><img src={props.food.FoodImage} alt={props.food.caption} />
-                <p>{props.food.FoodName}</p>
+        <Box>
+            <div className="thumbnail">
+                <div key={Id}>
+                <img src={FoodImage} alt={caption} />
+                </div>
             </div>
-            
-        </div>
+            <div className="content">
+                <p>{FoodName}</p>
+            </div>         
+        </Box>
     );
 };
 
