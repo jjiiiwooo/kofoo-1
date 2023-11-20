@@ -39,24 +39,26 @@ const Box = styled.div`
     }
 
     &+& {
+        border-top: 1px solid #dee2e6;
         margin-top: 3rem;
     }
 `;
 
 
 const MenuItem = ({food}) => {
-    const {Id, FoodImage, FoodName, caption} = food;
+    const {id, FoodImage, FoodName, caption} = food;
+
 
     return (
         <Box>
             <div className="thumbnail">
-                <div key={Id}>
+                <div key={id}>
                 <img src={FoodImage} alt={caption} />
                 </div>
             </div>
             <div className="content">
                 <p>{FoodName}</p>
-            </div>         
+            </div>
         </Box>
     );
 };

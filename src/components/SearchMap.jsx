@@ -1,7 +1,6 @@
 import {Map, MapMarker} from 'react-kakao-maps-sdk';
 import {useState, useEffect} from 'react';
 import { FcSearch } from "react-icons/fc";
-import FilterModal from './filterModal';
 import '../style/SearchMap.css';
 
 
@@ -20,7 +19,6 @@ const SearchMap = () => {
     errMsg: null,
     isLoading: true,
   })
-  const [modalOpen, setModalOpen] = useState(false);
 
  //사용자 현재 위치 받아오기
  useEffect(() => {
@@ -95,18 +93,9 @@ const handleSerarch = () => {
     }
 };
 
-//필터 모달창 오픈 
-const showFilter = () => {
-    setModalOpen(true);
-};
-
   
   return (
     <>
-    <div>
-        <button onClick={showFilter}>filter</button>
-        {modalOpen && <FilterModal setModalOpen={setModalOpen} />}
-    </div>
     
         <div>
             <input className="InputStyle"

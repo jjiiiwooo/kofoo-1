@@ -151,8 +151,8 @@ const PsError = styled.div`
   const navigate = useNavigate();
 
 
-  const [email, setEmail] = useState(' ');
-  const [password, setPassword] = useState(' ');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid,setPwValid] = useState(false);

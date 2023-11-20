@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback } from "react";
+import { useNavigate } from 'react-router-dom';
 import Webcam from "react-webcam";
-import axios from "axios";
+//import axios from "axios";
 import '../style/Camera.css';
 import { FcCamera } from "react-icons/fc";
 import { FcRedo } from "react-icons/fc";
@@ -16,6 +17,7 @@ const Camera = () => {
     const webcamRef = useRef(null);
     const [imgSrc, setImgSrc] = useState(null);
     const [submit, setSubmit] = useState(false);
+    const navigate = useNavigate();
 
     //현재 webcam 이미지의 base64 인코딩 문자열 반환
     const onCapture = useCallback(()=> {
@@ -25,19 +27,9 @@ const Camera = () => {
     },[webcamRef]);
 
 
-    //axios를 사용하여 이미지파일 서버 전송
-    async function onUpload () {
-        const img = new FormData();
-        img.append("image",imgSrc);
-        await axios( {
-            method:'post',
-            //url:"http://localhost:8000/Capture",
-            data: "image",
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
-    }
+    const onUpload= ()=>{
+        navigate('/login/main/picture/menu');
+    };
 
     //재촬영 
     const onRetake = () => {
