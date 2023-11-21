@@ -40,7 +40,7 @@ const Box = styled.div`
 
     &+& {
         border-top: 1px solid #dee2e6;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 `;
 

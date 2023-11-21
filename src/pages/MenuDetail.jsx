@@ -23,14 +23,25 @@ const DetailBlock = styled.div`
         border: 3px solid #fff;
         border-radius: 5px;
         color: black;
-        font-size:40px;
-
+        font-size:30px;
+        border:none;
+        background-color:black;
+        color:white;
+        padding: 0.25rem 1rem;
         &:hover {
+            background-color:pink;
+        };
 
-        }
-    
     }
+`;
 
+const ButtonGroup = styled.div`
+   button {
+    & + & {
+            margin-left:10rem;
+            margin-top:2rem;
+        }
+    }
 `;
 
 const MenuDetail = () => {
@@ -79,14 +90,14 @@ const MenuDetail = () => {
                 <h1>{food.FoodName}</h1>
              </>
             <div>
-            <>
+            <ButtonGroup>
                 <button onClick={()=>ButtonClick("profile")}>description</button>
                 <button onClick={()=>ButtonClick("nutrition")}>nutrition</button>
                 <button onClick={()=>ButtonClick("receipe")}>Receipe</button>
                 {content === 'profile' && <Profile food={food} />}
                 {content === 'nutrition' && <Nutrition food={food} />}
                 {content === 'receipe' && <Receipe/>}
-            </>
+            </ButtonGroup>
             </div>
 
           </DetailBlock>
