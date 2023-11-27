@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, {useState} from 'react';
+import {useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
 
 const Wrapper = styled.div`
   position: relative;
@@ -151,14 +152,14 @@ const PsError = styled.div`
   const navigate = useNavigate();
 
 
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid,setPwValid] = useState(false);
-  //const [notAllow, setNotAllow] = useState(true);
 
-  //이메일
+  //이메일 유효성 검사 
   const handleEmail = (e) => {
     setEmail(e.target.value);
 
@@ -174,39 +175,21 @@ const PsError = styled.div`
 
 
   //axios를 이용해 버튼 클릭시 데이터 전송
-    // eslint-disable-next-line
   const handleConfirmButton = () => {
-    const url = "http://localhost:8000/Users";
-    const payload = {
-      email,
-      password
-    }
-    axios.post(url,payload, {
-      headers: {
-        'Content-Type':'application/json',
+    axios.get(`http://localhost:3001/Users?email=${email}&password=${password}`)
+    .then(response=> {
+      if(response.data.length > 0) {
+        alert("login Success");
+        navigate("main");
+      }else {
+        alert('login failure');
       }
     })
-    .then(res => {
-      console.log(res.data);
-      alert("Login Success");
-
-      //
-      axios.defaults.headers.common['Authorization'] = res.data;
-      //로컬스토리지에 받은 토큰 저장 
-      window.localStorage.setItem("token",res.data.slice(7));
-    })
-    .catch(err => {
-      console.log(err);
-    })
+    .catch(error => {
+      alert('login failure');
+    });
   };
   
-  /*useEffect (() => {
-    if(emailValid && pwValid) {
-      setNotAllow(false);
-      return;
-    }
-    setNotAllow(true);
-  },[emailValid,pwValid]); */
 
   //비밀번호
   const handlePassword = (e) => {
@@ -222,10 +205,6 @@ const PsError = styled.div`
     }
   }
 
-  //제출 버튼 클릭시 메인 페이지로 이동
-  const gotoMain = () => {
-    navigate("main");
-  };
   
 
   return (
@@ -269,7 +248,7 @@ const PsError = styled.div`
       </div>
 
       <div>
-        <Styledsubmitbutton onClick={gotoMain} >
+        <Styledsubmitbutton onClick={handleConfirmButton} >
           SUBMIT
         </Styledsubmitbutton>
       </div>

@@ -316,7 +316,7 @@ function Signup () {
 
   //axios를 이용해 버튼 클릭시 데이터 전송
   const handleSubmitbutton =() => {
-    const url = "http://localhost:3000/Users";
+    const url = "http://localhost:3001/Users";
     const payload = {
       email,
       password

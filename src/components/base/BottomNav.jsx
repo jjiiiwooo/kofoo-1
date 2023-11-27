@@ -1,0 +1,32 @@
+import {useState} from 'react';
+import '../../style/BottomNav.css';
+import { Link } from 'react-router-dom';
+import { MdHome } from "react-icons/md";
+import { FaCamera } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
+
+
+const BottomNav = () => {
+    const [active, setActive] = useState(0);
+    return (
+        <nav className="Wrapper">
+            <div>
+                <Link to ="/login/main" className="nav-link" onClick={()=>setActive(1)}>
+                    <MdHome size={70} className={active === 1 ? "nav-item active": "nav-item"} />
+                </Link>
+            </div>
+            <div>
+                <Link to="/login/main/picture" className="nav-link"onClick={()=>setActive(2)}>
+                    <FaCamera size={70}className={active === 2 ? "nav-item active": "nav-item"}/>
+                </Link>
+            </div>
+            <div>
+                <Link to="/login/main/mypage" className="nav-link"onClick={()=>setActive(3)}>
+                    <FaUserAlt size={70}className={active === 3 ? "nav-item active": "nav-item"}/>
+                </Link>
+            </div>
+        </nav>
+    );
+};
+
+export default BottomNav;
