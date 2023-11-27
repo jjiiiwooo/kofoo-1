@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { FaLocationDot } from "react-icons/fa6";
 import { FcSearch } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
+import BottomNav from "../components/base/BottomNav";
+import Header from "../components/base/Header";
 
 const Wrapper = styled.div`
 
@@ -10,17 +12,16 @@ const Wrapper = styled.div`
     width: 1440px;
     height: 1024px;
     margin: 0 auto;
-    //border: 1px solid #000000;
 `;
 
-const Logo = styled.img`
+/*const Logo = styled.img`
 
     position: absolute;
     width: 210.8px;
     height: 160.2px;
     left: 230.1px;
     top: 56.4px;
-`;
+`;*/
 
 const Texts = styled.div`
 
@@ -181,7 +182,7 @@ const SearchIcon = styled.div`
 `;
 
 const Main = () => {
-    const logo = "/img/logo.png";
+    //const logo = "/img/logo.png";
     const outside = "/img/outsidereas.png";
     const inside = "/img/insiderest.png";
     const halal = "/img/HalalFood.png";
@@ -201,8 +202,9 @@ const Main = () => {
 
 
     return (
+        <>
+         <Header/>
         <Wrapper>
-            <Logo img src={logo} alt=""/>
             <Texts>
                 <h1>what would you like to eat today?</h1>
             </Texts>
@@ -237,7 +239,9 @@ const Main = () => {
             <Inside>
                 <img src={inside} onClick={gotoPicture} alt=' '/>
             </Inside>
+            <BottomNav />
         </Wrapper>
+        </>
             
   
     );

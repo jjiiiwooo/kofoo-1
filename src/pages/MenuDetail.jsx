@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Profile from '../components/Profile';
 import Nutrition from '../components/Nutrition';
 import Receipe from '../components/Receipe';
+import BottomNav from '../components/base/BottomNav';
 
 const DetailBlock = styled.div`
     margin: 0 auto;
@@ -99,6 +100,7 @@ const MenuDetail = () => {
                 {content === 'receipe' && <Receipe/>}
             </ButtonGroup>
             </div>
+            <BottomNav />
 
           </DetailBlock>
         );

@@ -1,6 +1,7 @@
 import React from 'react';
 import Camera from '../components/Camera';
 import styled from 'styled-components';
+import BottomNav from '../components/base/BottomNav';
 
 const Wrapper = styled.div`
     
@@ -27,6 +28,7 @@ const UserPicture = () => {
                 <p>Please take a picture of the menu</p>
             </Texts>
             <Camera />
+            <BottomNav/>
         </Wrapper>
     );
 };

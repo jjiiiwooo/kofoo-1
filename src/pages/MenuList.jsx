@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import MenuItem from '../components/MenuItem';
+import BottomNav from '../components/base/BottomNav';
 
 const MenuBlock = styled.div`
     .logo {
@@ -82,7 +83,7 @@ const MenuList = () => {
                 ))}
                 </>
             </div>
-             
+            <BottomNav />
         </MenuBlock>
     );
 };

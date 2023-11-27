@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 
+
 const Wrapper = styled.div`
   position: relative;
   width: 1440px;
@@ -147,11 +148,9 @@ const PsError = styled.div`
 
 
 
-  function Login() {
+function Login() {
   const logo = "/img/logo.png"
   const navigate = useNavigate();
-
-
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
