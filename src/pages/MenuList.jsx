@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import MenuItem from '../components/MenuItem';
 import BottomNav from '../components/common/BottomNav';
 import Header from "../components/common/Header";
+import Backbutton from "../components/common/Backbutton";
 
 const MenuBlock = styled.div`
     .logo {
@@ -69,6 +70,7 @@ const MenuList = () => {
     return (
         <>
         <Header/>
+        <Backbutton/>
         <MenuBlock>
             <div className="logo">
                 <img src={imogi} alt=""/>

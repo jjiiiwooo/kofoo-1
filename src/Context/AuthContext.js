@@ -3,8 +3,11 @@ import { createContext, useReducer, useContext} from "react";
  //초기상태
  const initialState = {
     isLoggedIn:false,
-    user:null,
-    currentUser: null, //현재 로그인한 유저 
+    currentUser:{
+        email:null,
+        password:null,
+        nickname:null,
+    }, //현재 로그인한 유저 
 };
 
 //리듀서 함수 
@@ -23,11 +26,6 @@ const reducer = (state,action) => {
                 ...state,
                 isLoggedIn:false,
                 user:null,
-            };
-        case 'SET_USERS': 
-            return {
-                ...state,
-                user:action.payload
             };
         case 'SET_CURRENT_USER' :
             return {

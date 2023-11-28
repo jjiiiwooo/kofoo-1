@@ -5,6 +5,7 @@ import { FcSearch } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "../components/common/BottomNav";
 import Header from "../components/common/Header";
+import Backbutton from "../components/common/Backbutton";
 
 const Wrapper = styled.div`
 
@@ -14,14 +15,7 @@ const Wrapper = styled.div`
     margin: 0 auto;
 `;
 
-/*const Logo = styled.img`
 
-    position: absolute;
-    width: 210.8px;
-    height: 160.2px;
-    left: 230.1px;
-    top: 56.4px;
-`;*/
 
 const Texts = styled.div`
 
@@ -182,7 +176,6 @@ const SearchIcon = styled.div`
 `;
 
 const Main = () => {
-    //const logo = "/img/logo.png";
     const outside = "/img/outsidereas.png";
     const inside = "/img/insiderest.png";
     const halal = "/img/HalalFood.png";
@@ -204,6 +197,7 @@ const Main = () => {
     return (
         <>
          <Header/>
+         <Backbutton/>
         <Wrapper>
             <Texts>
                 <h1>what would you like to eat today?</h1>

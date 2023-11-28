@@ -2,14 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
+
 const Wrapper = styled.div`
-position: relative;
-width: 1440px;
-height: 1024px;
-margin: 0 auto;
 
-background: #FFFFFF;
-
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    margin: 0 auto;
 `;
 
 const StyledButtonL = styled.button`
@@ -61,11 +60,12 @@ function Home() {
   const logo = "/img/logo.png";
 
   return (
-    <Wrapper>
-     <Styledlogo img src={logo} alt=" "/>
+      <Wrapper>
+      <Styledlogo img src={logo} alt=" "/>
       <StyledButtonL title="로그인" onClick={()=>{navigate("login");}}>Login</StyledButtonL>
       <StyledButtonS title="회원가입" onClick={()=>{navigate("signup");}}>Signup</StyledButtonS>
     </Wrapper>
+    
   )
 }
 export default Home;

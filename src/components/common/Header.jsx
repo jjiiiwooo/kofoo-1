@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     .logo {
         position: flex;
         width: 200.57px;
-        height: 230.35px;
+        height: 210.35px;
         left: 3px;
         top: 26px;
     }

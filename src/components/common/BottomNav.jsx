@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { MdHome } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
+import { FaMapLocationDot } from "react-icons/fa6";
 
 
 const BottomNav = () => {
@@ -21,8 +22,13 @@ const BottomNav = () => {
                 </Link>
             </div>
             <div>
-                <Link to="/login/main/mypage" className="nav-link"onClick={()=>setActive(3)}>
-                    <FaUserAlt size={70}className={active === 3 ? "nav-item active": "nav-item"}/>
+                <Link to="/login/main/map" className="nav-link" onClick={()=>setActive(3)}>
+                    <FaMapLocationDot size={70} className={active === 3 ? "nav-item active": "nav-item"}/>
+                </Link>
+            </div>
+            <div>
+                <Link to="/login/main/mypage" className="nav-link"onClick={()=>setActive(4)}>
+                    <FaUserAlt size={70}className={active === 4 ? "nav-item active": "nav-item"}/>
                 </Link>
             </div>
         </nav>

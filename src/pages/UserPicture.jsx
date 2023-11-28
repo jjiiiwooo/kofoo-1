@@ -2,6 +2,8 @@ import React from 'react';
 import Camera from '../components/Camera';
 import styled from 'styled-components';
 import BottomNav from '../components/common/BottomNav';
+import Backbutton from "../components/common/Backbutton";
+import Header from '../components/common/Header';
 
 const Wrapper = styled.div`
     
@@ -24,6 +26,8 @@ const UserPicture = () => {
 
     return (
         <Wrapper>
+            <Header/>
+            <Backbutton/>
             <Texts>
                 <p>Please take a picture of the menu</p>
             </Texts>

@@ -8,6 +8,7 @@ import Nutrition from '../components/Nutrition';
 import Receipe from '../components/Receipe';
 import BottomNav from '../components/common/BottomNav';
 import Header from "../components/common/Header";
+import Backbutton from "../components/common/Backbutton";
 
 const DetailBlock = styled.div`
     margin: 0 auto;
@@ -87,6 +88,7 @@ const MenuDetail = () => {
     return (
         <>
             <Header/>
+            <Backbutton/>
             <DetailBlock>
              <>
                 <h2>{food.id}</h2>

@@ -190,7 +190,7 @@ function Login() {
   };
   
 
-  //비밀번호
+  //비밀번호 유효성 검사 
   const handlePassword = (e) => {
     setPassword(e.target.value);
 
