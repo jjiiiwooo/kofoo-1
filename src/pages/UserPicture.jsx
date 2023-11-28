@@ -1,7 +1,7 @@
 import React from 'react';
 import Camera from '../components/Camera';
 import styled from 'styled-components';
-import BottomNav from '../components/base/BottomNav';
+import BottomNav from '../components/common/BottomNav';
 
 const Wrapper = styled.div`
     

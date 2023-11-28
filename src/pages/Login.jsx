@@ -179,9 +179,9 @@ function Login() {
     .then(response=> {
       if(response.data.length > 0) {
         alert("login Success");
-        navigate("main");
       }else {
         alert('login failure');
+        navigate('/');
       }
     })
     .catch(error => {
@@ -204,7 +204,9 @@ function Login() {
     }
   }
 
-  
+  const gotomain = () => {
+    navigate("main");
+  }
 
   return (
     <Wrapper>
@@ -247,7 +249,7 @@ function Login() {
       </div>
 
       <div>
-        <Styledsubmitbutton onClick={handleConfirmButton} >
+        <Styledsubmitbutton onClick={() =>{handleConfirmButton(); gotomain();}} >
           SUBMIT
         </Styledsubmitbutton>
       </div>

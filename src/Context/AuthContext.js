@@ -1,10 +1,10 @@
-import { createContext, useReducer} from "react";
+import { createContext, useReducer, useContext} from "react";
 
  //초기상태
  const initialState = {
     isLoggedIn:false,
     user:null,
-    show:false, //헤더, 푸터 표시여부
+    currentUser: null, //현재 로그인한 유저 
 };
 
 //리듀서 함수 
@@ -24,11 +24,16 @@ const reducer = (state,action) => {
                 isLoggedIn:false,
                 user:null,
             };
-        case 'SHOW' :
+        case 'SET_USERS': 
             return {
                 ...state,
-                show:action.payload,
+                user:action.payload
             };
+        case 'SET_CURRENT_USER' :
+            return {
+                ...state,
+                currentUser:action.payload
+            }
         //아무것도 해당되지 않을 시 기본 상태 반환
         default:
             return state;
@@ -52,17 +57,15 @@ const AuthProvider = ({ children }) => {
       dispatch({ type: 'LOGOUT' });
     };
 
-    //헤더 표시 액션을 디스패치
-    const show = () => {
-        dispatch({type:'SHOW'});
-    }
   
     return (
-      <AuthContext.Provider value={{ state, login, logout,show}}>
+      <AuthContext.Provider value={{ state,dispatch, login, logout,}}>
         {children}
       </AuthContext.Provider>
     );
   };
+
+  export const useUserContext = () => useContext(AuthContext);
   
   export { AuthContext, AuthProvider };
   

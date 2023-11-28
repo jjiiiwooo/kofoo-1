@@ -6,7 +6,8 @@ import styled from 'styled-components';
 import Profile from '../components/Profile';
 import Nutrition from '../components/Nutrition';
 import Receipe from '../components/Receipe';
-import BottomNav from '../components/base/BottomNav';
+import BottomNav from '../components/common/BottomNav';
+import Header from "../components/common/Header";
 
 const DetailBlock = styled.div`
     margin: 0 auto;
@@ -84,6 +85,8 @@ const MenuDetail = () => {
     };
 
     return (
+        <>
+            <Header/>
             <DetailBlock>
              <>
                 <h2>{food.id}</h2>
@@ -103,6 +106,7 @@ const MenuDetail = () => {
             <BottomNav />
 
           </DetailBlock>
+        </>
         );
 }
 

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { FaLocationDot } from "react-icons/fa6";
 import { FcSearch } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
-import BottomNav from "../components/base/BottomNav";
-import Header from "../components/base/Header";
+import BottomNav from "../components/common/BottomNav";
+import Header from "../components/common/Header";
 
 const Wrapper = styled.div`
 

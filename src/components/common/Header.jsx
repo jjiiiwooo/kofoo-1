@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 
 const HeaderBlock = styled.div`
     position:fixed;
@@ -43,15 +45,23 @@ const Button = styled.button`
     background:#FBCCCC;
 `;
 
+
 const Header = () => {
     const logo = "/img/logo.png";
+    const navigate = useNavigate();
+
+    const onLogout = () => {
+        alert('logout');
+        navigate("/");
+    }
+
     return (
         <>
         <HeaderBlock>
             <Wrapper>
                 <img className="logo"src={logo} alt=""/>
             <div className="right">
-                <Button>로그아웃</Button>
+                <Button onClick={onLogout}>로그아웃</Button>
             </div>
             </Wrapper>
         </HeaderBlock>

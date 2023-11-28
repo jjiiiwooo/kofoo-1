@@ -85,16 +85,18 @@
 
   "Users" : [
     {
+        "id":1,
         "email": "test1@google.com",
         "password" : "11111aaaa",
         "nickname" : "user1"
     },
-    {
+    {  "id":2,
        "email":"test2@google.com",
        "password":"22222bbbb",
          "nickname" : "user2"
     },
     {
+       "id":3,
        "email":"test3@google.com",
        "password":"33333bbbb",
        "nickname" : "user3"

@@ -1,5 +1,5 @@
 import React from 'react';
-import BottomNav from '../components/base/BottomNav';
+import BottomNav from '../components/common/BottomNav';
 
 const Mypage = () => {
     return (

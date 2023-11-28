@@ -3,7 +3,8 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import MenuItem from '../components/MenuItem';
-import BottomNav from '../components/base/BottomNav';
+import BottomNav from '../components/common/BottomNav';
+import Header from "../components/common/Header";
 
 const MenuBlock = styled.div`
     .logo {
@@ -66,6 +67,8 @@ const MenuList = () => {
 
     //menu값이 유효할 때 
     return (
+        <>
+        <Header/>
         <MenuBlock>
             <div className="logo">
                 <img src={imogi} alt=""/>
@@ -85,6 +88,7 @@ const MenuList = () => {
             </div>
             <BottomNav />
         </MenuBlock>
+    </>
     );
 };
 
