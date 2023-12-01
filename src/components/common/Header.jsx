@@ -63,7 +63,7 @@ const Header = () => {
             <Wrapper>
                 <img className="logo"src={logo} alt=""/>
             <div className="right">
-                <h1>안녕하세요,{user.nickname}님</h1>
+                <h1 styled="padding=20px">Hello,{user.nickname}</h1>
                 <Button onClick={onLogout}>로그아웃</Button>
             </div>
             </Wrapper>
