@@ -49,10 +49,12 @@ const Button = styled.button`
 const Header = () => {
     const logo = "/img/logo.png";
     const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const onLogout = () => {
         alert('logout');
         navigate("/");
+        localStorage.clear('user');
     }
 
     return (
@@ -61,6 +63,7 @@ const Header = () => {
             <Wrapper>
                 <img className="logo"src={logo} alt=""/>
             <div className="right">
+                <h1>안녕하세요,{user.nickname}님</h1>
                 <Button onClick={onLogout}>로그아웃</Button>
             </div>
             </Wrapper>

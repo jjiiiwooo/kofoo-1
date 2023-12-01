@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 
-
 const Wrapper = styled.div`
   position: relative;
   width: 1440px;
@@ -175,10 +174,20 @@ function Login() {
 
   //axios를 이용해 버튼 클릭시 데이터 전송
   const handleConfirmButton = () => {
-    axios.get(`http://localhost:3001/Users?email=${email}&password=${password}`)
+    axios.get('http://localhost:3001/Users', {
+      params:{
+        email:email,
+        password:password
+      }
+    })
     .then(response=> {
       if(response.data.length > 0) {
-        alert("login Success");
+        const user = response.data[0];
+
+        //로그인 정보 localStorage에 저장
+        localStorage.setItem('user', JSON.stringify(user));
+        alert(`login Success`);
+        console.log(response.data);
       }else {
         alert('login failure');
         navigate('/');
@@ -227,9 +236,9 @@ function Login() {
 
       <EmailError>
         {
-          !emailValid && email.length<0 && (
+          !emailValid && email.length>0 && (
             <div>Please enter a valid e-mail </div>
-          )}
+        )}
       </EmailError>
 
       <TextP>PASSWORD</TextP>
@@ -242,9 +251,9 @@ function Login() {
         </div>
         <PsError>
           {
-            !pwValid && password.length >0 && (
+            !pwValid && password.length>0 && (
               <div> Please enter at least 8 characters including English and numbers. </div>
-            )}
+          )}
        </PsError>
       </div>
 

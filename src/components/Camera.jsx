@@ -76,7 +76,7 @@ const Camera = () => {
                          height={680}
                          width={600}
                          screenshotFormat="image/jpeg"
-                        videoConstraints={{deviceId: selectedDeviceId}} ref={webcamRef} />
+                          videoConstraints={{deviceId: selectedDeviceId}} ref={webcamRef} />
                     ): (
                         <p>사용자의 카메라를 가져올 수 없습니다.</p>
                     )}
