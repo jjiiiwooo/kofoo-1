@@ -2,7 +2,6 @@ import {useState, useRef} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { IconBase } from 'react-icons';
 
 const Container = styled.div`
   width: 1039px;
