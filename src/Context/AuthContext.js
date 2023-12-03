@@ -3,7 +3,6 @@ import { createContext, useReducer} from "react";
  //초기상태
  const initialState = {
     isLoggedIn:false, //로그인 여부
-    user:null  //현재 사용자 
 };
 
 //Context 객체 생성
@@ -18,14 +17,12 @@ const reducer = (state,action) => {
             return {
                 ...state, //불변성 유지
                 isLoggedIn:true,
-                user:action.payload.user,
             };
 
         case 'LOGOUT' : 
             return {
                 ...state,
                 isLoggedIn:false,
-                user:null,
             };
 
         //아무것도 해당되지 않을 시 기본 상태 반환
@@ -50,7 +47,7 @@ const AuthProvider = ({children}) => {
     };
   
     return (
-      <AuthContext.Provider value={{ state,login,logout}}>
+      <AuthContext.Provider value={{state,login,logout}}>
         {children}
       </AuthContext.Provider>
     );

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthContext";
 
 
 const HeaderBlock = styled.div`
@@ -49,11 +51,18 @@ const Button = styled.button`
 const Header = () => {
     const logo = "/img/logo.png";
     const navigate = useNavigate();
+    const {logout} = useContext(AuthContext);
+
+    //로컬 스토리지에 저장된 user 데이터 읽기 
     const user = JSON.parse(localStorage.getItem('user'));
 
     const onLogout = () => {
         alert('logout');
+        //로그아웃 상태 디스패치
+        logout();
+        //홈 화면으로 이동
         navigate("/");
+        //로컬 스토리지에서 모든 데이터 삭제 
         localStorage.clear('user');
     }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {Routes,Route} from "react-router-dom";
+import {Routes,Route, BrowserRouter} from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
@@ -9,10 +9,13 @@ import MapSearching from "../pages/MapSearching";
 import MenuDetail from "../pages/MenuDetail";
 import MenuList from "../pages/MenuList";
 import Mypage from "../pages/Mypage";
+import { AuthProvider } from "../Context/AuthContext";
 
 function App() {
   return (
-      <Routes>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
           <Route index element={<Home />}/>
           <Route path="login" element={<Login/>} />
           <Route path="signup" element={<Signup/>} />
@@ -22,7 +25,10 @@ function App() {
           <Route path="/login/main/map" element={<MapSearching />} />
           <Route path="/login/main/picture/menu" element={<MenuList/>} />
           <Route path="/login/main/picture/menu/detail/:id" element={<MenuDetail />}/>
-      </Routes>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+    
   );
 }
 
