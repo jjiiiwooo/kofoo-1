@@ -5,14 +5,15 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   //데스크탑
+  position: relative;
   width: 1440px;
   height: 1024px;
   margin: 0 auto;
 
 //모바일
  @media (max-width:768px) {
-  width: 375px;
-  flex-grow: 0;
+  width: 100%;
+  height: 100%;
   padding: 126px 51px 199px 0;
  };
 
@@ -37,10 +38,9 @@ const StyledButtonL = styled.button`
   //모바일
   @media (max-width:768px) {
     position: absolute;
-    width: 254px;
+    width: 80%;
     height: 59px;
-    margin: 70px 10px 20px 10px;
-    padding: 7px 59px 18px 60px;
+    left:10%;
     border-radius: 20px;
     background: #C5DBFC;
     font-family: Inter;
@@ -73,10 +73,11 @@ const StyledButtonS = styled.button`
   border-radius: 50px;
 
   @media (max-width:768px) {
-    width: 254px;
+    width: 80%;
     height: 59px;
-    margin: 10px 10px 20px 10px;
-    padding: 7px 59px 18px 60px;
+    left:10%;
+    margin: -50px 10px 20px 10px;
+    padding: 10px 59px 18px 60px;
     border-radius: 20px;
     background-color: #fbcccc;
     font-family: Inter;
@@ -96,17 +97,17 @@ const StyledButtonS = styled.button`
 const Styledlogo = styled.img`
   //데스크탑
   position: absolute;
-  width: 50%;
-  height: 50%;
-  left: 23%;
-  top: 10%;
+  width: 864px;
+  height: 484px;
+  left: 300px;
+  top: 51px;
 
   @media (max-width:768px) {
     position: absolute;
-    width: 339px;
-    height: 250px;
-    left: 44px;
-    top: 200px;
+    width: 100%;
+    height: 30%;
+    left: 4%;
+    top: 5%;
   }
 
 `;
