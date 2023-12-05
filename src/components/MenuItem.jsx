@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Box = styled.div`
+
     display: flex;
     width: 1175px;
     height: 170px;
@@ -11,7 +12,14 @@ const Box = styled.div`
     background: #F4F2F2;
     border-radius: 30px;
 
-    .thumbnail {
+    //컴포넌트간 간격
+    &+& {
+        border-top: 1px solid #dee2e6;
+        margin-bottom:3rem;
+    }
+`;
+
+const Thumbnail = styled.div`
         margin-right: 1rem;
         img {
             margin-top:1rem;
@@ -22,9 +30,9 @@ const Box = styled.div`
             height:132px;
             object-fit: cover;
         }
-    }
+    `;
 
-    .content {
+const Content = styled.div`
         p {
             margin:0;
             margin-top:3rem;
@@ -36,13 +44,9 @@ const Box = styled.div`
             font-size: 40px;
             line-height: 1.5rem;
         }
-    }
+    `;
 
-    &+& {
-        border-top: 1px solid #dee2e6;
-        margin-top: 2rem;
-    }
-`;
+
 
 
 const MenuItem = ({food}) => {
@@ -50,15 +54,15 @@ const MenuItem = ({food}) => {
 
 
     return (
-        <Box>
-            <div className="thumbnail">
+        <Box> 
+            <Thumbnail>
                 <div key={id}>
                 <img src={FoodImage} alt={caption} />
                 </div>
-            </div>
-            <div className="content">
+            </Thumbnail>
+            <Content>
                 <p>{FoodName}</p>
-            </div>
+            </Content>
         </Box>
     );
 };

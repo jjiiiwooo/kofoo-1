@@ -82,7 +82,7 @@ const MenuList = () => {
             <div>
                  <>
                  {menu.map((food) => (
-                    <Link key={food.id} to={`/login/main/picture/menu/detail/${food.id}`}>
+                     <Link key={food.id} to={`/login/main/picture/menu/detail/${food.id}`}>
                          <MenuItem key={food.id} food={food} />
                     </Link>
                 ))}

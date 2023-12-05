@@ -2,6 +2,7 @@ import React, {useState,useEffect } from 'react';
 import styled from "styled-components";
 import axios from 'axios';
 import { FaCheck } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.div`
   position: relative;
@@ -280,6 +281,7 @@ const DoubleTextNic = styled.span`
 
 function Signup () {
   const logo = "/img/logo.png"
+  const navigate = useNavigate();
 
   //초기값 세팅
   const [email, setEmail] = useState('');
@@ -390,6 +392,7 @@ function Signup () {
     try {
       await axios.post("http://localhost:3001/Users", {email,password,nickname});
       alert("Signup success! Please Login");
+      navigate("/");
     }catch (error) {
       alert("Signup Error", error);
     }

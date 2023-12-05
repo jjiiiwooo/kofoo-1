@@ -48,13 +48,15 @@ const Button = styled.button`
 `;
 
 
+
 const Header = () => {
     const logo = "/img/logo.png";
     const navigate = useNavigate();
     const {logout} = useContext(AuthContext);
 
     //로컬 스토리지에 저장된 user 데이터 읽기 
-    const user = JSON.parse(localStorage.getItem('user'));
+     const user = JSON.parse(localStorage.getItem('user'));
+
 
     const onLogout = () => {
         alert('logout');
@@ -72,7 +74,7 @@ const Header = () => {
             <Wrapper>
                 <img className="logo"src={logo} alt=""/>
             <div className="right">
-                <h1 styled="padding=20">Hello,{user.nickname}</h1>
+                <h1 styled="padding=20">Hello,{user&&user.nickname}</h1>
                 <Button onClick={onLogout}>로그아웃</Button>
             </div>
             </Wrapper>
