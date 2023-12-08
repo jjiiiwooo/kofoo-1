@@ -21,7 +21,7 @@ const Backbutton = () => {
     }
     return (
         <div>
-            <Button onClick={BackClick}><IoMdArrowRoundBack size={80} color="#F4F0EB"/></Button>
+            <Button onClick={BackClick}><IoMdArrowRoundBack size={40} color="#F4F0EB"/></Button>
         </div>
     );
 };

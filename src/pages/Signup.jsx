@@ -1,283 +1,155 @@
 import React, {useState,useEffect } from 'react';
 import styled from "styled-components";
 import axios from 'axios';
-import { FaCheck } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 1440px;
-  height: 1024px;
-  margin:0 auto;
-
-  background: #FFFFFF;
+  width:100%;
+  height:100%;
 `;
 
 const Logo = styled.img`
- position: absolute;
-  width: 659.2px;
-  height: 220.6px;
-  left: 348px;
-  top: 27px;
+   width: 80%;
+   margin-left:10%;
+  margin-right:10%;
 `;
 
 const SignT = styled.div`
-  position: absolute;
-  width: 761px;
-  height: 60px;
-  left: 580px;
-  top: 182px;
-
-  font-family: 'Inter';
-  font-style: normal;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10vw;
   font-weight: 900;
-  font-size: 50.504px;
-  line-height: 89px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000;
 `;
 
 const EmailT = styled.div`
-  position: absolute;
-  width: 712px;
-  height: 46px;
-  left: 200px;
-  top: 250px;
-
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 600;
-  font-size: 40.504px;
-  line-height: 89px;
-  color: #000000;
+  font-weight: 800;
+  font-size: 7vw;
+  line-height: 42px;
 `;
 
 const EmailForm = styled.input`
   box-sizing: border-box;
-
-  position: absolute;
-  width: 972px;
-  height: 64px;
-  left: 210px;
-  top: 340px;
-  font-size:40px;
-
+  width: 95%;
+  height: 40px;
+  margin:2vw 0 2vw 0;
   background: #FFFDFD;
   border: 1px solid #000000;
+  font-size: 6vw;
 `;
 
 const EmailError = styled.div`
-  position: absolute;
-  width: 600px;
-  height: 51px;
-  left: 200px;
-  top: 400px;
-
+  width: 100%;
   font-family: 'Inter';
   font-style: italic;
   font-weight: 700;
-  font-size: 21.752px;
-  line-height: 44px;
+  font-size: 4vw;
+  line-height: 130%;;
   color: #EA0909;
 
 `;
 
 const PsT = styled.div`
-  position: absolute;
-  width: 712px;
-  height: 46px;
-  left: 200px;
-  top: 441px;
-
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 600;
-  font-size: 40.504px;
-  line-height: 89px;
-  color: #000000;
+  font-weight: 800;
+  font-size: 7vw;
+  line-height: 42px;
 `;
 
 const PasswordForm = styled.input`
   box-sizing: border-box;
-
-  position: absolute;
-  width: 972px;
-  height: 63px;
-  left: 210px;
-  top: 512px;
-  font-size:40px;
+  width: 95%;
+  height: 40px;
+  margin:2vw 0 2vw 0;
   background: #FFFDFD;
   border: 1px solid #000000;
+  font-size: 6vw;
 
 `;
 
 const PsError = styled.div`
-  position: absolute;
-  width: 600px;
-  height: 51px;
-  left: 200px;
-  top: 562px;
-
+  width: 100%;
   font-family: 'Inter';
   font-style: italic;
   font-weight: 700;
-  font-size: 21.752px;
-  line-height: 44px;
+  font-size: 4vw;
+  line-height: 130%;;
   color: #EA0909;
-
 `;
 
 const PsCT = styled.div`
-  position: absolute;
-  width: 712px;
-  height: 46px;
-  left: 200px;
-  top: 580px;
-
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 600;
-  font-size: 40.896px;
-  line-height: 89px;
-  color: #000000;
+  font-weight: 800;
+  font-size: 7vw;
+  line-height: 42px;
 `;
 
 const PscForm = styled.input`
   box-sizing: border-box;
-
-  position: absolute;
-  width: 972px;
-  height: 64px;
-  left: 210px;
-  top: 660px;
-  font-size:40px;
-
+  width: 95%;
+  height: 40px;
+  margin:2vw 0 2vw 0;
   background: #FFFDFD;
   border: 1px solid #000000;
+  font-size: 6vw;
+
 `;
 
 const PscError = styled.div`
-  position: absolute;
-  width: 600px;
-  height: 51px;
-  left: 200px;
-  top: 720px;
-
+ width: 100%;
   font-family: 'Inter';
   font-style: italic;
   font-weight: 700;
-  font-size: 21.752px;
-  line-height: 44px;
+  font-size: 4vw;
+  line-height: 130%;;
   color: #EA0909;
 `;
 
 const NickT = styled.div`
-  position: absolute;
-  width: 712px;
-  height: 46px;
-  left: 200px;
-  top: 747px;
-
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 600;
-  font-size: 40.896px;
-  line-height: 70px;
-  color: #000000;
+  font-weight: 800;
+  font-size: 7vw;
+  line-height: 42px;
 
 `;
 
 const NickForm = styled.input`
   box-sizing: border-box;
-
-  position: absolute;
-  width: 972px;
-  height: 64px;
-  left: 210px;
-  top: 820px;
-  font-size:40px;
-
+  width: 95%;
+  height: 40px;
+  margin:2vw 0 2vw 0;
   background: #FFFDFD;
   border: 1px solid #000000;
+  font-size: 6vw;
 `;
 
 const SubmitButton = styled.button`
-  position: absolute;
-  width: 337px;
-  height: 81px;
-  left: 210px;
-  top: 940px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 580;
-  font-size: 58.0607px;
-  line-height: 81px;
-  background: #C5DBFC;
+  width: 70%;
+  margin: 30% 10% 10% 10%;
   border-radius: 20px;
-`;
-
-const EmailDouble = styled.button`
-  position: absolute;
-  width: 229px;
-  height: 50px;
-  left: 766px;
-  top: 273px;
-  background: #FBCCCC;
-  border-radius: 30px;
-  font-family: 'Inter';
-  font-style: normal;
+  background-color: #c5dbfc;
+  font-family: Inter;
+  font-size: 8vw;
   font-weight: 800;
-  font-size: 23.5872px;
-  line-height: 29px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
   text-align: center;
-  color: #000000;
-
+  color: #000;
 `;
 
-const NicknameButton = styled.button`
-  position: absolute;
-  width: 229px;
-  height: 50px;
-  left: 766px;
-  top: 752px;
-  background: #FBCCCC;
-  border-radius: 30px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 23.5872px;
-  line-height: 29px;
-  text-align: center;
-  color: #000000;
 
-`;
-
-const DoubleTextE = styled.span`
-  position: absolute;
-  width: 252px;
-  height: 29px;
-  left: 1000px;
-  top: 282px;
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 23.5872px;
-  line-height: 29px;
-  color: #000000;
-`;
-
-const DoubleTextNic = styled.span`
-  position: absolute;
-  width: 252px;
-  height: 29px;
-  left: 1000px;
-  top: 762px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 23.5872px;
-  line-height: 29px;
-  color: #000000;
-`;
 
 function Signup () {
   const logo = "/img/logo.png"
@@ -299,10 +171,6 @@ function Signup () {
   const [isPassword, setIspassword] = useState(false);
   const [isPasswordConfirm, setIsPasswordConfirm] = useState(false);
   const [notAllow, SetNotAllow] = useState(true); //초기상태 = 버튼 비활성화 
-
-  //이메일, 닉네임 중복 상태 저장
-  const [doubleEmail, setDoubleEmail] = useState(true);
-  const [doubleNickname, setDoubleNickname] = useState(true);
 
   //이메일 유효성 검사 
   const ValidEmail = (email) => {
@@ -378,13 +246,13 @@ function Signup () {
   };
 
  useEffect ( () => {
-    if(isEmail && isPassword && isPasswordConfirm&&!doubleEmail&&!doubleNickname) {
+    if(isEmail && isPassword && isPasswordConfirm) {
       SetNotAllow(false); //버튼 활성화 
       return;
     }
     SetNotAllow(true);
 
-  },[isEmail,isPassword,isPasswordConfirm,doubleEmail,doubleNickname])
+  },[isEmail,isPassword,isPasswordConfirm])
 
   //axios를 이용해 버튼 클릭시 데이터 전송
   const handleSubmitbutton = async(e) => {
@@ -399,38 +267,7 @@ function Signup () {
     
   };
 
-  //이메일 중복 검사 
-  const checkEmailDuplicate = () => {
-      axios.get(`http://localhost:3001/users?email=${email}`)
-    .then((res)=> {
-      if(res.data.length >0) {
-        setDoubleEmail(true);
-      }
-      else {
-        setDoubleEmail(false);
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    })
 
-  };
-
-  //닉네임 중복 검사 
-  const checkNicknameDuplicate = () => {
-    axios.get(`http://localhost:3001/users?nickname=${nickname}`)
-    .then((res)=> {
-      if(res.data.length>0) {
-        setDoubleNickname(true);
-      }
-      else {
-        setDoubleNickname(false);
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    })
-  }
 
   return (
     <Wrapper>
@@ -444,10 +281,6 @@ function Signup () {
        onChange={handleEmail}
        required={true}
        type="text" />
-
-       <EmailDouble type="button" onClick={checkEmailDuplicate}>Double Check</EmailDouble>
-       {doubleEmail?(<DoubleTextE>중복된 이메일 입니다.</DoubleTextE>):
-       (<DoubleTextE><FaCheck color="red" size={30}/></DoubleTextE>)}
 
        <EmailError>
         {emailMessage}
@@ -484,11 +317,6 @@ function Signup () {
             onChange={handleNickname}
             required={true}
             type="text"/>
-          <NicknameButton type="button" onClick={checkNicknameDuplicate}>Double Check</NicknameButton>
-          {doubleNickname ?(<DoubleTextNic>중복된 닉네임 입니다.</DoubleTextNic>):
-          (<DoubleTextNic><FaCheck color="red" size={30}/></DoubleTextNic>)}
-
-
         <SubmitButton 
           formMethod='post'
           onClick={handleSubmitbutton} 

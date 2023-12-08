@@ -15,10 +15,8 @@ const DetailBlock = styled.div`
     text-align: center;
     img {
         display:block;
-        width: 700px;
-        height: 394px;
-        left: 175px;
-        margin: 0 auto;
+        width: 90vw;
+        height: 30vh;
         border-radius: 10px;
     }
 
@@ -26,7 +24,8 @@ const DetailBlock = styled.div`
         border: 3px solid #fff;
         border-radius: 5px;
         color: black;
-        font-size:30px;
+        font-size:5vw;
+        margin:1vw;
         border:none;
         background-color:black;
         color:white;

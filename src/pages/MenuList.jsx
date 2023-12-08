@@ -12,10 +12,8 @@ const MenuBlock = styled.div`
         img {
             margin: 0 auto;
             display: flex;
-            width: 200px;
-            height: 121px;
-            left: 574px;
-            top: 85px;
+            width: 30vw;
+            height: 10vh;
         }
     }
 
@@ -23,15 +21,12 @@ const MenuBlock = styled.div`
         h1 {
             width:100%;
             text-align:center;
-            margin: 0 auto;
             display: block;
-            margin:5rem;
+            margin:2vw;
             font-family: 'IBM Plex Mono';
             font-style: normal;
             font-weight: 400;
-            font-size: 60.84px;
-            line-height: 50px;
-
+            font-size: 8vw;
         }
     }
 

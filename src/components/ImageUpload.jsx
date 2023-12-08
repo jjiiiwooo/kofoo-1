@@ -4,63 +4,54 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 1039px;
-  height: 493px;
-  left: 213px;
-  top: 237px;
+  width:100%;
+  height:25vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   background: #FFFFFF;
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  justify-content: center;
+  
 
 `;
 
+const ImContainer = styled.div`
+  width:100%;
+  height:25vh;
+
+  img{
+    width:100%;
+    height:25vh;
+  }
+`;
+
 const SelectButton = styled.button`
-  height: 115px;
-  left: 213px;
-  position: absolute;
-  top: 940px;
-  width: 452px;
-  border-radius: 50px;
-  background-color: #c5dbfc;
-  font-family: Inter;
-  font-size: 60.5px;
-  font-weight: 800;
-  font-stretch: normal;
+  position: relative;
+  top:35vh;
+  font-family: 'Inter';
   font-style: normal;
-  line-height: 1.4;
-  letter-spacing: normal;
-  text-align: center;
-  color: #000;
+  font-weight: 800;
+  font-size: 5vw;
+  line-height: 27px;
+  background: #C5DBFC;
+  border-radius: 15px;
 
 `;
 
 const SendButton = styled.button`
-  height: 115px;
-  left: 775px;
-  position: absolute;
-  top: 940px;
-  width: 452px;
-  border-radius: 50px;
-  background-color: #fbcccc;
-  font-family: Inter;
-  font-size: 60.5px;
-  font-weight: 800;
-  font-stretch: normal;
+  float:left;
+  margin-right:10vw;
+  font-family: 'Inter';
   font-style: normal;
-  line-height: 1.4;
-  letter-spacing: normal;
-  text-align: center;
-  color: #000;
+  font-weight: 800;
+  font-size: 5vw;
+  line-height: 27px;
+  background: #FBCCCC;
+  border-radius: 15px;
 `;
 
-const Icon = styled.img`
-  position: absolute;
-  width: 150px;
-  height: 170.21px;
-  left: 450px;
-  bottom:450px;
-`;
+
 
 const ImageUpload = () => {
     const [Image, setImage] = useState(null); 
@@ -96,11 +87,11 @@ const ImageUpload = () => {
         <SelectButton onClick={()=> InputRef.current.click()}>Select Image</SelectButton>
         {Image?(
             <div>
-                <img src={URL.createObjectURL(Image)} alt="SelectedImage" width="1039" height="493" />
+                <ImContainer> <img src={URL.createObjectURL(Image)} alt="SelectedImage"/></ImContainer>
                 <SendButton onClick={onUpload}>Send Image</SendButton>
             </div>
         ): (
-            <Container><Icon src={uploadicon} alt=""/></Container>
+            <Container><img src={uploadicon} alt=""/></Container>
         )}
         </>
     );

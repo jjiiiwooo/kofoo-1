@@ -3,31 +3,32 @@ import styled from "styled-components";
 const Box = styled.div`
 
     display: flex;
-    width: 1175px;
-    height: 170px;
+    width: 100%;
+    height: 20vw;
     left: 99px;
     top: 484px;
     margin:0 auto;
 
     background: #F4F2F2;
     border-radius: 30px;
+    border-top: 1px solid #dee2e6;
 
     //컴포넌트간 간격
-    &+& {
+    & {
         border-top: 1px solid #dee2e6;
-        margin-bottom:3rem;
+        margin-bottom:3vh;
     }
 `;
 
 const Thumbnail = styled.div`
-        margin-right: 1rem;
+        margin-right: 3vw;
         img {
-            margin-top:1rem;
-            margin-left:1rem;
-            border-radius: 30px;
+            margin-top:3vw;
+            margin-left:3vw;
+            border-radius: 20px;
             display:block;
-            width: 299px;
-            height:132px;
+            width: 20vw;
+            height:13vw;
             object-fit: cover;
         }
     `;
@@ -35,14 +36,14 @@ const Thumbnail = styled.div`
 const Content = styled.div`
         p {
             margin:0;
-            margin-top:3rem;
-            margin-left:3rem;
+            margin-top:3vw;
+            margin-left:3vw;
             white-space: normal;
             font-family: 'IBM Plex Mono';
             font-style: normal;
             font-weight: 700;
-            font-size: 40px;
-            line-height: 1.5rem;
+            font-size: 6vw;
+            line-height: 1.5rvw;
         }
     `;
 

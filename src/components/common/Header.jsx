@@ -17,18 +17,18 @@ const Wrapper = styled.div`
     align-items:center;
     justify-content: space-between;
 
+
     .logo {
         position: flex;
-        width: 200.57px;
-        height: 210.35px;
-        left: 3px;
-        top: 26px;
+        width: 15vh;
     }
 
     .right {
         display: flex;
         align-items: center;
-        padding:2px;
+        padding:2%;
+        font-size: 10px;
+        margin:2%;
     }
 `;
 
@@ -39,9 +39,8 @@ const Spacer = styled.div`
 const Button = styled.button`
     border:none;
     border-radius: 4px;
-    font-size:2rem;
+    font-size:20px;
     font-weight:bold;
-    padding:0.25rem lrem;
     color:white;
     cursor:pointer;
     background:#FBCCCC;
@@ -74,8 +73,8 @@ const Header = () => {
             <Wrapper>
                 <img className="logo"src={logo} alt=""/>
             <div className="right">
-                <h1 styled="padding=20">Hello,{user&&user.nickname}</h1>
-                <Button onClick={onLogout}>로그아웃</Button>
+                <h1>Hello,{user&&user.nickname}</h1>
+                <Button onClick={onLogout}>logout</Button>
             </div>
             </Wrapper>
         </HeaderBlock>
