@@ -57,7 +57,7 @@ const Dessert = styled.div`
    margin:5vw 0 0 4vw;
 `;
 
-const BicBox =styled.div`
+const BigBox =styled.div`
     display:flex;
 `;
 
@@ -143,7 +143,7 @@ const Main = () => {
 
             </SmallBox>
              
-            <BicBox>
+            <BigBox>
                 <Outside>
                     <img src={outside} onClick={gotoMap} alt=' ' />
                 </Outside>
@@ -151,7 +151,7 @@ const Main = () => {
                     <img src={inside} onClick={gotoPicture} alt=' '/>
                 </Inside>
 
-            </BicBox>
+            </BigBox>
             <BottomNav />
         </Wrapper>
         </>
