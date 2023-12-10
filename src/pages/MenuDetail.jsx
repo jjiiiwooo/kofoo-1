@@ -18,6 +18,7 @@ const DetailBlock = styled.div`
         width: 90vw;
         height: 30vh;
         border-radius: 10px;
+        margin:3vw;
     }
 
     button {
@@ -25,7 +26,7 @@ const DetailBlock = styled.div`
         border-radius: 5px;
         color: black;
         font-size:5vw;
-        margin:1vw;
+        margin:2vw;
         border:none;
         background-color:black;
         color:white;

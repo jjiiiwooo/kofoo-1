@@ -21,14 +21,16 @@ const Wrapper = styled.div`
     .logo {
         position: flex;
         width: 15vh;
+        height:100px;
     }
 
     .right {
         display: flex;
         align-items: center;
-        padding:2%;
+        padding:2vw;
         font-size: 10px;
-        margin:2%;
+        margin:2vw;
+
     }
 `;
 

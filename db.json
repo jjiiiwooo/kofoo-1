@@ -19,7 +19,7 @@
     {
       "id": 2,
       "FoodName": "음식2",
-      "FooodImage": "http://via.placeholder.com/160",
+      "FoodImage": "http://via.placeholder.com/160",
       "Foodingredient": "재료2",
       "FoodProfile": "설명2",
       "Foodcalorie": "칼로리2",
@@ -35,7 +35,7 @@
     {
       "id": 3,
       "FoodName": "음식3",
-      "FooodImage": "http://via.placeholder.com/160",
+      "FoodImage": "http://via.placeholder.com/160",
       "Foodingredient": "재료3",
       "FoodProfile": "설명3",
       "Foodcalorie": "칼로리3",
@@ -51,7 +51,7 @@
     {
       "id": 4,
       "FoodName": "음식4",
-      "FooodImage": "http://via.placeholder.com/160",
+      "FoodImage": "http://via.placeholder.com/160",
       "Foodingredient": "재료4",
       "FoodProfile": "설명4",
       "Foodcalorie": "칼로리4",
@@ -67,7 +67,7 @@
     {
       "id": 5,
       "FoodName": "음식5",
-      "FooodImage": "http://via.placeholder.com/160",
+      "FoodImage": "http://via.placeholder.com/160",
       "Foodingredient": "재료5",
       "FoodProfile": "설명5",
       "Foodcalorie": "칼로리5",
@@ -93,12 +93,6 @@
       "email": "test2@google.com",
       "password": "22222bbbb",
       "nickname": "user2"
-    },
-    {
-      "email": "test6@google.com",
-      "password": "11111aaaa",
-      "nickname": "jiwoooo",
-      "id": 3
     }
   ],
   "images": [
@@ -134,75 +128,6 @@
     },
     {
       "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "id": 19
-    },
-    {
-      "id": 20
-    },
-    {
-      "id": 21
-    },
-    {
-      "id": 22
-    },
-    {
-      "id": 23
-    },
-    {
-      "id": 24
-    },
-    {
-      "id": 25
-    },
-    {
-      "id": 26
-    },
-    {
-      "id": 27
-    },
-    {
-      "id": 28
-    },
-    {
-      "id": 29
-    },
-    {
-      "id": 30
-    },
-    {
-      "id": 31
-    },
-    {
-      "id": 32
-    },
-    {
-      "id": 33
-    },
-    {
-      "id": 34
     }
   ]
 }

@@ -28,14 +28,15 @@ const ImContainer = styled.div`
 
 const SelectButton = styled.button`
   position: relative;
-  top:35vh;
+  top:40vh;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
-  font-size: 5vw;
+  font-size: 3vh;
   line-height: 27px;
   background: #C5DBFC;
   border-radius: 15px;
+
 
 `;
 
@@ -45,7 +46,7 @@ const SendButton = styled.button`
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
-  font-size: 5vw;
+  font-size: 3vh;
   line-height: 27px;
   background: #FBCCCC;
   border-radius: 15px;

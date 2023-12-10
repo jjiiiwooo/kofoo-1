@@ -102,6 +102,11 @@ const PsForm = styled.input`
   border: 1px solid #000000;
   font-size: 6vw;
 
+  //데스크탑
+  @media (min-width: 992px) {
+    height:100px;
+  }
+
 `;
 
 const EmailError = styled.div`

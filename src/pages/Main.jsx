@@ -6,29 +6,37 @@ import BottomNav from "../components/common/BottomNav";
 import Header from "../components/common/Header";
 import Backbutton from "../components/common/Backbutton";
 
+
 const Wrapper = styled.div`
    width: 100%;
 `;
 
 const Texts = styled.div`
     width: 100%;
-    margin-top:7vh;
+    margin-top:8vh;
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 400;
     font-size: 4vw;
     line-height: 26px;
     color: #111010;
+    line-height: 1;
 
 `;
 
 const Inputs = styled.input`
     box-sizing: border-box;
     width: 100%;
-    height: 33px;
+    height: 4vh;
     margin:2% 0 3% 0;
     border: 1px solid #000000;
     border-radius: 10px;
+    font-size:4vw;
+
+    @media (min-width:900px) {
+        height:100px;
+    }
+
 
 `;
 
@@ -38,23 +46,47 @@ const SmallBox = styled.div`
 
 const Halal = styled.div`
     flex:1;
-    margin:5vw 0 0 4vw;
+    margin:4vw 0 0 4vw;
+
+    img {
+        width:20vw;
+        height:100%;
+        object-fit:fill;
+    }
+
 `;
 
 const Vegun = styled.div`
     flex:1;
     margin:5vw 0 0 4vw;
+
+    img {
+        width:20vw;
+        height:100%;
+        object-fit:fill;
+    }
 `;
 
 const Spicy = styled.div`
    flex:1;
    margin:5vw 0 0 4vw;
+   img {
+        width:20vw;
+        height:100%;
+        object-fit:fill;
+    }
 
 `;
 
 const Dessert = styled.div`
    flex:1;
    margin:5vw 0 0 4vw;
+   img {
+        width:20vw;
+        height:100%;
+        object-fit:fill;
+
+    }
 `;
 
 const BigBox =styled.div`
@@ -64,12 +96,22 @@ const BigBox =styled.div`
 const Inside = styled.div`
    flex:1;
    margin:10vw 0 2vw 4vw;
+   img {
+        width:40vw;
+        height:100%;
+        object-fit: fill;
+    }
 
 `;
 
 const Outside = styled.div`
    flex:1;
    margin:10vw 0 2vw 4vw;
+   img {
+        width:40vw;
+        height:100%;
+        object-fit: fill;
+    }
 `;
 
 const UserLocation = styled.div`
@@ -83,9 +125,17 @@ const UserLocation = styled.div`
     color: #A08E8E;
 `;
 
-const LocationIcon = styled.div`
-  margin-top:2vh;
+const LocationIcon = styled(FaLocationDot)`
+  margin-top:1vw;
   float:left;
+  width:4vw;
+  height:4vh;
+  color:grey;
+
+  @media (min-width:700px){
+    width:10vw;
+    height:10vh;
+  }
 
 `;
 
@@ -117,9 +167,7 @@ const Main = () => {
             <Texts>
                 <h1>what would you like to eat today?</h1>
             </Texts>
-            <LocationIcon>
-                <FaLocationDot size="22" color="grey" />
-            </LocationIcon>
+             <LocationIcon />
             <UserLocation>
                 <GetUserLocation />
             </UserLocation>
@@ -129,16 +177,16 @@ const Main = () => {
             </div>
             <SmallBox>
                 <Halal>
-                    <img src={halal} alt=" "/>
+                    <img src={halal} alt=""/>
                  </Halal>
                 <Vegun>
-                    <img src={vegun} alt=" "/>
+                    <img src={vegun} alt=""/>
                 </Vegun>
                 <Spicy>
-                    <img src={spicy} alt=" " />
+                    <img src={spicy} alt="" />
                 </Spicy>
                 <Dessert>
-                    <img src={dessert} alt=" "/>
+                    <img src={dessert} alt=""/>
                 </Dessert>
 
             </SmallBox>
